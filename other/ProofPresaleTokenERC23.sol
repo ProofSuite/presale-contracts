@@ -35,7 +35,7 @@ contract ProofPresaleToken is ERC20, Ownable {
   function ProofPresaleToken() {}
 
   function payable () {
-    throw;
+    revert();
   }
 
   function isContract(address _address) private returns (bool is_contract) {

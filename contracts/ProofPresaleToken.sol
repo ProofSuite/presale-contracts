@@ -35,8 +35,8 @@ contract ProofPresaleToken is ERC20, Ownable {
 
 
   // TODO : need to replace throw by 0.4.11 solidity compiler syntax
-  function payable () {
-    throw;
+  function() payable {
+    revert();
   }
 
   function transfer(address _to, uint _value) returns (bool success) {
