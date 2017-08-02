@@ -1,0 +1,312 @@
+{
+  "contract_name": "Pausable",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "unpause",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "pause",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Pause",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "Unpause",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x60606040526000805460a060020a60ff02191690555b60008054600160a060020a03191633600160a060020a03161790555b5b6102a2806100416000396000f300606060405263ffffffff60e060020a6000350416633f4ba83a81146100505780635c975abb146100775780638456cb591461009e5780638da5cb5b146100c5578063f2fde38b146100f4575b600080fd5b341561005b57600080fd5b610063610115565b604051901515815260200160405180910390f35b341561008257600080fd5b61006361018e565b604051901515815260200160405180910390f35b34156100a957600080fd5b61006361019e565b604051901515815260200160405180910390f35b34156100d057600080fd5b6100d861021c565b604051600160a060020a03909116815260200160405180910390f35b34156100ff57600080fd5b610113600160a060020a036004351661022b565b005b6000805433600160a060020a0390811691161461013157600080fd5b60005460a060020a900460ff16151561014957600080fd5b6000805460a060020a60ff02191690557f7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b3360405160405180910390a15060015b5b5b90565b60005460a060020a900460ff1681565b6000805433600160a060020a039081169116146101ba57600080fd5b60005460a060020a900460ff16156101d157600080fd5b6000805460a060020a60ff02191660a060020a1790557f6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff62560405160405180910390a15060015b5b5b90565b600054600160a060020a031681565b60005433600160a060020a0390811691161461024657600080fd5b600160a060020a038116156102715760008054600160a060020a031916600160a060020a0383161790555b5b5b505600a165627a7a72305820bf9511e8746e3521a4251461c06fa8b8020743be951ca7ebb16841c6a9bfa3a20029",
+  "networks": {
+    "3": {
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x4e5da379c6b7735d17043d797c843ad1f1ff1118",
+      "updated_at": 1501503816740
+    },
+    "1501072018249": {
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x7168f729b7575548074395bb1e5a7e7e6e38cbb4",
+      "updated_at": 1501074884114
+    },
+    "1501129356374": {
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x827c4628e53bea610b3c7eff4b3abc08d491a6e4",
+      "updated_at": 1501145200597
+    },
+    "1501233367601": {
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xa198f97aacb146d01a8cd0ad10d7fd51195de359",
+      "updated_at": 1501233397634
+    },
+    "1501233805599": {
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x521e48e4b65af24d16fb61fbc165e0ec898cebfb",
+      "updated_at": 1501233984599
+    },
+    "1501234246472": {
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xc1746f24890b03ea663365d18a69126798ccb124",
+      "updated_at": 1501234297436
+    },
+    "1501317500842": {
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x784f73d9c1a7324c52391daf9f9d4d54cca4549c",
+      "updated_at": 1501365891346
+    },
+    "1501391962565": {
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xadec2ec317038bd6ac401952eb3326c2dae9c68d",
+      "updated_at": 1501397256333
+    },
+    "1501477144253": {
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x162a36c9821eadecff9669a3940b7f72d055cd1c",
+      "updated_at": 1501478351799
+    },
+    "1501578986926": {
+      "links": {},
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "updated_at": 1501579019878
+    },
+    "1501581090427": {
+      "links": {},
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "updated_at": 1501587414046
+    },
+    "1501591432604": {
+      "links": {},
+      "events": {
+        "0x6985a02210a168e66602d3235cb6db0e70f92b3ba4d376a33c0f3d9434bff625": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Pause",
+          "type": "event"
+        },
+        "0x7805862f689e2f13df9f062ff482ad3ad112aca9e0847911ed832e158c525b33": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "Unpause",
+          "type": "event"
+        }
+      },
+      "updated_at": 1501592808280
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1501592808280
+}

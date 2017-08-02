@@ -1,0 +1,81 @@
+{
+  "contract_name": "SafeMath",
+  "abi": [],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b603680601c6000396000f30060606040525b600080fd00a165627a7a723058200c6a46790e76aceacca2e70dbcd6d39f98c250ab54831d312e0d10465af608530029",
+  "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0x7b4312adcd4f27b59ba33fb547c46cc03e30d61d",
+      "updated_at": 1501503816740
+    },
+    "1501072018249": {
+      "events": {},
+      "links": {},
+      "address": "0x2979ea442252f8c67a61ed8f6c40d0dfaaabe31c",
+      "updated_at": 1501074884114
+    },
+    "1501129356374": {
+      "events": {},
+      "links": {},
+      "address": "0x0ec4ec19fe60b2adb84743ce176f3c6d4e27cf94",
+      "updated_at": 1501145200596
+    },
+    "1501233367601": {
+      "events": {},
+      "links": {},
+      "address": "0x18396b7d9a0cfd46e918b28468dd042401af855c",
+      "updated_at": 1501233397633
+    },
+    "1501233805599": {
+      "events": {},
+      "links": {},
+      "address": "0xb6c61bf047edbea5bf8d2f2a0c0fe8e696390821",
+      "updated_at": 1501233984599
+    },
+    "1501234246472": {
+      "events": {},
+      "links": {},
+      "address": "0xf932fb713cb1aefcb87f080aee4b94c106c89afa",
+      "updated_at": 1501234297436
+    },
+    "1501317500842": {
+      "events": {},
+      "links": {},
+      "address": "0x994d6117404c55566f3889a7d7d815b7a0d88ec8",
+      "updated_at": 1501365891346
+    },
+    "1501391962565": {
+      "events": {},
+      "links": {},
+      "address": "0xc071266d52ff62358d99b5c6f4e3ef4586663bd6",
+      "updated_at": 1501397256332
+    },
+    "1501477144253": {
+      "events": {},
+      "links": {},
+      "address": "0x403cc7802725928652a3d116bb1781005e2e76d3",
+      "updated_at": 1501478351798
+    },
+    "1501578986926": {
+      "events": {},
+      "links": {},
+      "address": "0x85a84691547b7ccf19d7c31977a7f8c0af1fb25a",
+      "updated_at": 1501579019877
+    },
+    "1501581090427": {
+      "events": {},
+      "links": {},
+      "address": "0x85a84691547b7ccf19d7c31977a7f8c0af1fb25a",
+      "updated_at": 1501587414045
+    },
+    "1501591432604": {
+      "events": {},
+      "links": {},
+      "address": "0x0711b3cd383b70b42eaf6f8fc6047ebf9b99e634",
+      "updated_at": 1501592808280
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1501592808280
+}
