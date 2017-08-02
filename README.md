@@ -38,6 +38,23 @@ npm install
 npm install -g truffle
 ```
 
+- Compile contracts
+```
+truffle compile
+```
+
+- Initialize testrpc (or geth)
+
+```
+testrpc
+```
+
+-- Migrate contracts to chosen network
+
+```
+truffle migrate --network development
+```
+
 - Make sure you are using the latest version of node
 
 ``` 
@@ -45,11 +62,6 @@ nvm install 8.1.0
 nvm use 8.1.0
 ```
 
-- Initialize testrpc
-
-```
-testrpc
-```
 
 - Fill in `truffle.js` and `deploy_contracts.js` with appropriate wallet addresses. Unlock the corresponding addresses.
 
@@ -58,3 +70,12 @@ testrpc
 ```
 truffle test
 ```
+
+- You can interact with the contracts via the console 
+
+```
+truffle console
+```
+
+
+
