@@ -19,7 +19,7 @@ module.exports = function(callback) {
     const contract = require('truffle-contract');
 
 
-    const runTest = async function() {
+    const run = async function() {
 
         let crowdsaleContract = contract(crowdsaleArtifact);
         crowdsaleContract.setProvider(web3.currentProvider);
@@ -284,7 +284,7 @@ module.exports = function(callback) {
     };
 
 
-    runTest();
+    run();
     callback();
 
 };
