@@ -49,7 +49,7 @@ truffle compile
 testrpc
 ```
 
--- Migrate contracts to chosen network
+- Migrate contracts to chosen network
 
 ```
 truffle migrate --network development
