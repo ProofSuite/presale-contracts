@@ -22,19 +22,18 @@ var wallet = '0xacf472dbcfa46cf9e9842e2734be2b138fb13c41';
 var minInvestment = (10 ** 18) * 1;
 var tokenCap = 295257;
 var rate = 20;
-var decimals = 18;
 var gas = 3*10**6;
-var gasPrice = 13*10**9;
+var gasPrice = 40*10**9;
 
 module.exports = function(deployer) {
   deployer.deploy(SafeMath, {gas: gas, gasPrice: gasPrice });
   deployer.link(SafeMath, Crowdsale);
   deployer.link(SafeMath, ProofPresaleToken);
-  deployer.deploy(Ownable, {gas: gas, gasPrice: gasPrice  });
-  deployer.deploy(Pausable, {gas: gas, gasPrice: gasPrice  });
-  deployer.deploy(Contactable, {gas: gas, gasPrice: gasPrice  });
-  deployer.deploy(ProofPresaleToken, {gas: gas, gasPrice: gasPrice  });
-  deployer.deploy(Crowdsale, wallet, minInvestment, tokenCap, rate, decimals, {gas: gas, gasPrice: gasPrice });
+  // deployer.deploy(Ownable, {gas: gas, gasPrice: gasPrice  });
+  // deployer.deploy(Pausable, {gas: gas, gasPrice: gasPrice  });
+  // deployer.deploy(Contactable, {gas: gas, gasPrice: gasPrice  });
+  // deployer.deploy(ProofPresaleToken, {gas: gas, gasPrice: gasPrice  });
+  deployer.deploy(Crowdsale, wallet, minInvestment, tokenCap, rate, {gas: gas, gasPrice: gasPrice });
 };
 
 

@@ -36,10 +36,6 @@ contract ProofPresale is Pausable {
 
   string public contactInformation;
 
-  uint256 public tokenDecimals;
-
-
-  
 
   /**
    * event for token purchase logging
@@ -63,20 +59,17 @@ contract ProofPresale is Pausable {
    * @param _minInvestment is the minimum amount of ether that can be sent to the contract
    * @param _cap above which the crowdsale is closed
    * @param _rate is the amounts of tokens given for 1 ether
-   * @param _tokenDecimals is the number of decimals - base units - for the presale token
    */ 
 
-  function ProofPresale(address _wallet, uint256 _minInvestment, uint256 _cap, uint256 _rate, uint256 _tokenDecimals) {
+  function ProofPresale(address _wallet, uint256 _minInvestment, uint256 _cap, uint256 _rate) {
     
     require(_wallet != 0x0);
     require(_minInvestment >= 0);
-    require(_tokenDecimals >= 0);
     require(_cap > 0);
 
     token = createTokenContract();
     wallet = _wallet;
     rate = _rate;
-    tokenDecimals = _tokenDecimals;
     minInvestment = _minInvestment;  //minimum investment in wei  (=10 ether)
     cap = _cap * (10**18);  //cap in tokens base units (=295257 tokens)
   }

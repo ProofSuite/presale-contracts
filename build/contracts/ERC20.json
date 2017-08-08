@@ -179,17 +179,17 @@
           "inputs": [
             {
               "indexed": true,
-              "name": "owner",
+              "name": "_owner",
               "type": "address"
             },
             {
               "indexed": true,
-              "name": "spender",
+              "name": "_spender",
               "type": "address"
             },
             {
               "indexed": false,
-              "name": "value",
+              "name": "_value",
               "type": "uint256"
             }
           ],
@@ -201,17 +201,17 @@
           "inputs": [
             {
               "indexed": true,
-              "name": "from",
+              "name": "_from",
               "type": "address"
             },
             {
               "indexed": true,
-              "name": "to",
+              "name": "_to",
               "type": "address"
             },
             {
               "indexed": false,
-              "name": "value",
+              "name": "_value",
               "type": "uint256"
             }
           ],
@@ -219,7 +219,7 @@
           "type": "event"
         }
       },
-      "updated_at": 1502191275845
+      "updated_at": 1502219210763
     },
     "1501072018249": {
       "links": {},
@@ -873,5 +873,5 @@
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1502214009675
+  "updated_at": 1502219210763
 }
