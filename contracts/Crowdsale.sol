@@ -58,27 +58,15 @@ contract Crowdsale is Pausable {
 
 
 
-  /**
-   * crowdsale constructor
-   * @param _wallet who receives invested ether
-   * @param _minInvestment is the minimum amount of ether that can be sent to the contract
-   * @param _cap above which the crowdsale is closed
-   * @param _tokenDecimals is the number of decimals - base units - for the presale token
-   */ 
 
-  function Crowdsale(address _wallet, uint256 _minInvestment, uint256 _cap, uint256 _rate, uint256 _tokenDecimals) {
-    
-    require(_wallet != 0x0);
-    require(_minInvestment >= 0);
-    require(_tokenDecimals >= 0);
-    require(_cap > 0);
+  function Crowdsale() {
 
     token = createTokenContract();
-    wallet = _wallet;
-    rate = _rate;
-    tokenDecimals = _tokenDecimals;
-    minInvestment = _minInvestment;  //minimum investment in wei  (=10 ether)
-    cap = _cap * (10**18);  //cap in tokens base units (=295257 tokens)
+    wallet = 0xaCF472DBcfA46cF9E9842e2734bE2b138fB13C41;
+    rate = 20;
+    tokenDecimals = 18;
+    minInvestment = (10**18)/400;  //minimum investment in wei  (=10 ether)
+    cap = 295257 * (10**18);  //cap in tokens base units (=295257 tokens)
   }
 
   // creates the token to be sold. 
