@@ -93,7 +93,7 @@ contract Crowdsale is Pausable {
   }
 
   // low level token purchase function
-  function buyTokens(address beneficiary) payable whenNotPaused {
+  function buyTokens(address beneficiary) payable whenNotPaused nonReentrant {
     require(beneficiary != 0x0);
     require(validPurchase());
 
