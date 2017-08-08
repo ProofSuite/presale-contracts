@@ -77,7 +77,7 @@ contract Crowdsale is Pausable {
     wallet = _wallet;
     rate = _rate;
     tokenDecimals = _tokenDecimals;
-    minInvestment = _minInvestment * (10**18);  //minimum investment in wei  (=10 ether)
+    minInvestment = _minInvestment;  //minimum investment in wei  (=10 ether)
     cap = _cap * (10**18);  //cap in tokens base units (=295257 tokens)
   }
 
