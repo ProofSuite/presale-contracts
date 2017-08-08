@@ -1,19 +1,19 @@
 pragma solidity ^0.4.11;
 
-import './ProofPresaleToken.sol';
 import './SafeMath.sol';
 import './Pausable.sol';
+import './ProofPresaleToken.sol';
+
 
 /**
- * @title Crowdsale 
- * @dev Crowdsale is a base contract for managing a token crowdsale.
- * Crowdsales have a start and end block, where investors can make
- * token purchases and the crowdsale will assign them tokens based
+ * @title ProofPresale 
+ * ProofPresale allows investors to make
+ * token purchases and assigns them tokens based
  * on a token per ETH rate. Funds collected are forwarded to a wallet 
  * as they arrive.
  */
  
-contract Crowdsale is Pausable {
+contract ProofPresale is Pausable {
   using SafeMath for uint256;
 
   // The token being sold
@@ -38,7 +38,6 @@ contract Crowdsale is Pausable {
 
   uint256 public tokenDecimals;
 
-  bool private rentrancy_lock = false;
 
   
 
@@ -63,10 +62,11 @@ contract Crowdsale is Pausable {
    * @param _wallet who receives invested ether
    * @param _minInvestment is the minimum amount of ether that can be sent to the contract
    * @param _cap above which the crowdsale is closed
+   * @param _rate is the amounts of tokens given for 1 ether
    * @param _tokenDecimals is the number of decimals - base units - for the presale token
    */ 
 
-  function Crowdsale(address _wallet, uint256 _minInvestment, uint256 _cap, uint256 _rate, uint256 _tokenDecimals) {
+  function ProofPresale(address _wallet, uint256 _minInvestment, uint256 _cap, uint256 _rate, uint256 _tokenDecimals) {
     
     require(_wallet != 0x0);
     require(_minInvestment >= 0);
@@ -81,7 +81,7 @@ contract Crowdsale is Pausable {
     cap = _cap * (10**18);  //cap in tokens base units (=295257 tokens)
   }
 
-  // creates the token to be sold. 
+  // creates presale token
   function createTokenContract() internal returns (ProofPresaleToken) {
     return new ProofPresaleToken();
   }
@@ -92,18 +92,21 @@ contract Crowdsale is Pausable {
     buyTokens(msg.sender);
   }
 
-  // low level token purchase function
-  function buyTokens(address beneficiary) payable whenNotPaused nonReentrant {
+  
+  /**
+   * Low level token purchse function
+   * @param beneficiary will recieve the tokens.
+   */
+  function buyTokens(address beneficiary) payable whenNotPaused {
     require(beneficiary != 0x0);
     require(validPurchase());
 
 
     uint256 weiAmount = msg.value;
-    // compute amount of tokens created
-    uint256 tokens = weiAmount.mul(rate);
-
     // update weiRaised
     weiRaised = weiRaised.add(weiAmount);
+    // compute amount of tokens created
+    uint256 tokens = weiAmount.mul(rate);
 
     token.mint(beneficiary, tokens);
     TokenPurchase(msg.sender, beneficiary, weiAmount, tokens);
@@ -111,7 +114,6 @@ contract Crowdsale is Pausable {
   }
 
   // send ether to the fund collection wallet
-  // override to create custom fund forwarding mechanisms
   function forwardFunds() internal {
     wallet.transfer(msg.value);
   }
@@ -126,6 +128,7 @@ contract Crowdsale is Pausable {
     return (notSmallAmount && withinCap);
   }
 
+  //allow owner to finalize the presale once the presale is ended
   function finalize() onlyOwner {
     require(!isFinalized);
     require(hasEnded());
@@ -136,36 +139,18 @@ contract Crowdsale is Pausable {
     isFinalized = true;
   }
 
+
   function setContactInformation(string info) onlyOwner {
       contactInformation = info;
   }
 
 
-  // @return true if crowdsale event has ended
+  //return true if crowdsale event has ended
   function hasEnded() public constant returns (bool) {
     bool capReached = (weiRaised.mul(rate) >= cap);
     return capReached;
   }
     
-  /**
-   * 
-   * @author Remco Bloemen <remco@2π.com>
-   * @dev Prevents a contract from calling itself, directly or indirectly.
-   * @notice If you mark a function `nonReentrant`, you should also
-   * mark it `external`. Calling one nonReentrant function from
-   * another is not supported. Instead, you can implement a
-   * `private` function doing the actual work, and a `external`
-   * wrapper marked as `nonReentrant`.
-   */
-  
-  // TODO need to set nonReentrant modifier where necessary
-
-  modifier nonReentrant() {
-    require(!rentrancy_lock);
-    rentrancy_lock = true;
-    _;
-    rentrancy_lock = false;
-  }
 
 
 }

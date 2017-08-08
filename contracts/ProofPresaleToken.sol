@@ -1,20 +1,16 @@
 pragma solidity ^0.4.11;
 
-
-import './ERC20.sol';
 import './SafeMath.sol';
+import './ERC20.sol';
 import './Ownable.sol';
 
-
 /**
- * Standard ERC20 token
- *
+ * @title ProofPresaleToken (PROOFP) 
+ * Standard Mintable ERC20 Token
  * https://github.com/ethereum/EIPs/issues/20
  * Based on code by FirstBlood:
  * https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
  */
-
-/// @title Proof Presale Token (PROOFP)
 
 contract ProofPresaleToken is ERC20, Ownable {
 
@@ -23,9 +19,9 @@ contract ProofPresaleToken is ERC20, Ownable {
   mapping(address => uint) balances;
   mapping (address => mapping (address => uint)) allowed;
 
-  string public name = "Proof Presale Token";
-  string public symbol = "PROOFP";
-  uint8 public decimals = 18;
+  string public constant name = "Proof Presale Token";
+  string public constant symbol = "PPT";
+  uint8 public constant decimals = 18;
   bool public mintingFinished = false;
 
   event Mint(address indexed to, uint256 amount);
@@ -34,12 +30,15 @@ contract ProofPresaleToken is ERC20, Ownable {
   function ProofPresaleToken() {}
 
 
-  // TODO : need to replace throw by 0.4.11 solidity compiler syntax
   function() payable {
     revert();
   }
 
-  function transfer(address _to, uint _value) returns (bool success) {
+  function balanceOf(address _owner) constant returns (uint256) {
+    return balances[_owner];
+  }
+    
+  function transfer(address _to, uint _value) returns (bool) {
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -48,7 +47,7 @@ contract ProofPresaleToken is ERC20, Ownable {
     return true;
   }
 
-  function transferFrom(address _from, address _to, uint _value) returns (bool success) {
+  function transferFrom(address _from, address _to, uint _value) returns (bool) {
     var _allowance = allowed[_from][msg.sender];
 
     balances[_to] = balances[_to].add(_value);
@@ -59,17 +58,13 @@ contract ProofPresaleToken is ERC20, Ownable {
     return true;
   }
 
-  function balanceOf(address _owner) constant returns (uint balance) {
-    return balances[_owner];
-  }
-
-  function approve(address _spender, uint _value) returns (bool success) {
+  function approve(address _spender, uint _value) returns (bool) {
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
     return true;
   }
 
-  function allowance(address _owner, address _spender) constant returns (uint remaining) {
+  function allowance(address _owner, address _spender) constant returns (uint256) {
     return allowed[_owner][_spender];
   }
     
@@ -85,7 +80,6 @@ contract ProofPresaleToken is ERC20, Ownable {
    * @param _amount The amount of tokens to mint.
    * @return A boolean that indicates if the operation was successful.
    */
-
   function mint(address _to, uint256 _amount) onlyOwner canMint returns (bool) {
     totalSupply = totalSupply.add(_amount);
     balances[_to] = balances[_to].add(_amount);
@@ -94,7 +88,7 @@ contract ProofPresaleToken is ERC20, Ownable {
   }
 
   /**
-   * @dev Function to stop minting new tokens.
+   * Function to stop minting new tokens.
    * @return True if the operation was successful.
    */
   function finishMinting() onlyOwner returns (bool) {
@@ -106,5 +100,3 @@ contract ProofPresaleToken is ERC20, Ownable {
   
   
 }
-
-
