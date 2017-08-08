@@ -7,12 +7,12 @@ var ProofPresaleToken = artifacts.require('./ProofPresaleToken.sol');
 var ProofPresale = artifacts.require('./ProofPresale.sol');
 
 
-var wallet = '0xacf472dbcfa46cf9e9842e2734be2b138fb13c41'
+var wallet = '0x99892Ac6DA1b3851167Cb959fE945926bca89f09'
 var minInvestment = (10 ** 18) / 280;
 var tokenCap = 295257;
 var rate = 20;
 var decimals = 18;
-var gas = 300000
+var gas = 1000000
 var gasPrice = 13*(10**9);
 
 /**
@@ -26,13 +26,13 @@ var gasPrice = 13*(10**9);
 
 module.exports = function(deployer) {
   deployer.deploy(SafeMath, {gas: gas, gasPrice: gasPrice});
-  deployer.link(SafeMath, Crowdsale);
+  deployer.link(SafeMath, ProofPresale);
   deployer.link(SafeMath, ProofPresaleToken);
   deployer.deploy(Ownable, {gas: gas, gasPrice: gasPrice });
   deployer.deploy(Pausable, {gas: gas, gasPrice: gasPrice });
   deployer.deploy(Contactable, {gas: gas, gasPrice: gasPrice });
   deployer.deploy(ProofPresaleToken, {gas: gas, gasPrice: gasPrice });
-  deployer.deploy(ProofPresale, wallet, minInvestment, tokenCap, rate, {gas: gas, gasPrice: gasPrice });
+  deployer.deploy(ProofPresale, {gas: 3000000, gasPrice: gasPrice });
 };
 
 

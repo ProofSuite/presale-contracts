@@ -270,22 +270,15 @@ contract ProofPresale is Pausable {
   event Finalized();
 
 
-  /**
-   * crowdsale constructor
-   * @param _wallet who receives invested ether
-   * @param _minInvestment is the minimum amount of ether that can be sent to the contract
-   * @param _cap above which the crowdsale is closed
-   * @param _rate is the amounts of tokens given for 1 ether
-   * @param _tokenDecimals is the number of decimals - base units - for the presale token
-   */ 
+
 
   function ProofPresale() {
-
+    
     token = createTokenContract();
-    wallet = '0x99892Ac6DA1b3851167Cb959fE945926bca89f09';
+    wallet = 0x99892Ac6DA1b3851167Cb959fE945926bca89f09;
     rate = 20;
-    minInvestment = (10**18)/400;  //minimum investment in wei  (=10 ether)
-    cap = _cap * (10**18);  //cap in tokens base units (=295257 tokens)
+    minInvestment = (10 ** 18) / 400;  //minimum investment in wei  (=10 ether)
+    cap = 295257 * (10**18);  //cap in tokens base units (=295257 tokens)
     
   }
 

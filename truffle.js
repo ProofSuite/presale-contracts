@@ -11,7 +11,7 @@ module.exports = {
       host: "localhost",
       port: 8545,
       network_id: 3,
-      gas: 3000000,
+      gas: 4000000,
       gasPrice: 21 * 10 ** 9,
       from: "0x38ef4f14eaced72a030c2a3588210b83b0e4944a"     //ethereum testnet (ex: ropsten) main account 
     },
