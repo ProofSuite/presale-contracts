@@ -5,11 +5,11 @@
       "constant": false,
       "inputs": [
         {
-          "name": "spender",
+          "name": "_spender",
           "type": "address"
         },
         {
-          "name": "value",
+          "name": "_value",
           "type": "uint256"
         }
       ],
@@ -40,15 +40,15 @@
       "constant": false,
       "inputs": [
         {
-          "name": "from",
+          "name": "_from",
           "type": "address"
         },
         {
-          "name": "to",
+          "name": "_to",
           "type": "address"
         },
         {
-          "name": "value",
+          "name": "_value",
           "type": "uint256"
         }
       ],
@@ -66,7 +66,7 @@
       "constant": true,
       "inputs": [
         {
-          "name": "who",
+          "name": "_owner",
           "type": "address"
         }
       ],
@@ -84,11 +84,11 @@
       "constant": false,
       "inputs": [
         {
-          "name": "to",
+          "name": "_to",
           "type": "address"
         },
         {
-          "name": "value",
+          "name": "_value",
           "type": "uint256"
         }
       ],
@@ -106,11 +106,11 @@
       "constant": true,
       "inputs": [
         {
-          "name": "owner",
+          "name": "_owner",
           "type": "address"
         },
         {
-          "name": "spender",
+          "name": "_spender",
           "type": "address"
         }
       ],
@@ -129,17 +129,17 @@
       "inputs": [
         {
           "indexed": true,
-          "name": "from",
+          "name": "_from",
           "type": "address"
         },
         {
           "indexed": true,
-          "name": "to",
+          "name": "_to",
           "type": "address"
         },
         {
           "indexed": false,
-          "name": "value",
+          "name": "_value",
           "type": "uint256"
         }
       ],
@@ -151,17 +151,17 @@
       "inputs": [
         {
           "indexed": true,
-          "name": "owner",
+          "name": "_owner",
           "type": "address"
         },
         {
           "indexed": true,
-          "name": "spender",
+          "name": "_spender",
           "type": "address"
         },
         {
           "indexed": false,
-          "name": "value",
+          "name": "_value",
           "type": "uint256"
         }
       ],
@@ -823,5 +823,5 @@
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1502200808865
+  "updated_at": 1502211077519
 }
