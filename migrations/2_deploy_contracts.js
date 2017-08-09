@@ -1,18 +1,17 @@
 var SafeMath = artifacts.require('./SafeMath.sol');
 var Ownable = artifacts.require('./Ownable.sol');
 var Pausable = artifacts.require('./Pausable.sol');
-var Contactable = artifacts.require('./Contactable.sol');
 var ERC20 = artifacts.require('./ERC20.sol');
 var ProofPresaleToken = artifacts.require('./ProofPresaleToken.sol');
 var ProofPresale = artifacts.require('./ProofPresale.sol');
 
 
-var wallet = '0x99892Ac6DA1b3851167Cb959fE945926bca89f09'
-var minInvestment = (10 ** 18) / 280;
+var wallet = '0x30ec0a9ca3e8e87363cba2b8a3774902ce82d3af';
+var minInvestment = 10 * (10 ** 18);
 var tokenCap = 295257;
 var rate = 20;
 var decimals = 18;
-var gas = 1000000
+var gas = 1000000;
 var gasPrice = 13*(10**9);
 
 /**

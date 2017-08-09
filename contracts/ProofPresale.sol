@@ -270,15 +270,13 @@ contract ProofPresale is Pausable {
   event Finalized();
 
 
-
-
   function ProofPresale() {
     
     token = createTokenContract();
     wallet = 0x99892Ac6DA1b3851167Cb959fE945926bca89f09;
     rate = 20;
-    minInvestment = (10 ** 18) / 400;  //minimum investment in wei  (=10 ether)
-    cap = 295257 * (10**18);  //cap in tokens base units (=295257 tokens)
+    minInvestment = 10 ether;  //minimum investment in wei  (=10 ether)
+    cap = 295257 * (10**18);  //cap in token base units (=295257 tokens)
     
   }
 

@@ -1,7 +1,6 @@
 const SafeMath = artifacts.require('./SafeMath.sol');
 const Ownable = artifacts.require('./Ownable.sol');
 const Pausable = artifacts.require('./Pausable.sol');
-const Contactable = artifacts.require('./Contactable.sol');
 const ProofPresaleToken = artifacts.require('./ProofPresaleToken.sol');
 const Crowdsale = artifacts.require('./ProofPresale.sol');
 

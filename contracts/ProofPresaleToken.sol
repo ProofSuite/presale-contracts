@@ -127,8 +127,8 @@ contract ProofPresaleToken is ERC20, Ownable {
   function balanceOf(address _owner) constant returns (uint balance) {
     return balances[_owner];
   }
-
-    function transfer(address _to, uint _value) returns (bool success) {
+    
+  function transfer(address _to, uint _value) returns (bool success) {
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
