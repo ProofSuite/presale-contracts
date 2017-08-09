@@ -18,7 +18,7 @@ var Crowdsale = artifacts.require('./ProofPresale.sol');
 * deployer.deploy(Crowdsale, '0x00000000000000', 10, 295257, 20, 18, {gas: 3000000, gasPrice: 1000000000});
 */ 
 
-var wallet = '0xacf472dbcfa46cf9e9842e2734be2b138fb13c41';
+var wallet = '0xe2b3204f29ab45d5fd074ff02ade098fbc381d42';
 var minInvestment = (10 ** 18) * 1;
 var tokenCap = 295257;
 var rate = 20;

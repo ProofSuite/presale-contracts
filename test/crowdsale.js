@@ -285,8 +285,8 @@ contract('Crowdsale', (accounts) => {
 
         beforeEach( async function () {
 
-          let wallet = '0x8d39c80b2c4da233dab03e0640d7be5377379bfd';
-          this.crowdsale = await Crowdsale.new(wallet, 10, 295257, 20, 18);
+          let wallet = '0xe2b3204f29ab45d5fd074ff02ade098fbc381d42';
+          this.crowdsale = await Crowdsale.new(wallet, 10, 295257, 20);
           this.token = ProofPresaleToken.at(await this.crowdsale.token());
           this.owner = await this.crowdsale.owner.call();
           this.wallet = await this.crowdsale.wallet.call();
