@@ -28,10 +28,10 @@ module.exports = function(deployer) {
   deployer.deploy(SafeMath, {gas: gas, gasPrice: gasPrice});
   deployer.link(SafeMath, ProofPresale);
   deployer.link(SafeMath, ProofPresaleToken);
-  deployer.deploy(Ownable, {gas: gas, gasPrice: gasPrice });
-  deployer.deploy(Pausable, {gas: gas, gasPrice: gasPrice });
-  deployer.deploy(Contactable, {gas: gas, gasPrice: gasPrice });
-  deployer.deploy(ProofPresaleToken, {gas: gas, gasPrice: gasPrice });
+  // deployer.deploy(Ownable, {gas: gas, gasPrice: gasPrice });
+  // deployer.deploy(Pausable, {gas: gas, gasPrice: gasPrice });
+  // deployer.deploy(Contactable, {gas: gas, gasPrice: gasPrice });
+  // deployer.deploy(ProofPresaleToken, {gas: gas, gasPrice: gasPrice });
   deployer.deploy(ProofPresale, {gas: 3000000, gasPrice: gasPrice });
 };
 
