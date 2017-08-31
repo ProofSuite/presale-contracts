@@ -185,10 +185,6 @@ contract('Crowdsale', (accounts) => {
           expect(walletBalanceAfter).equals(walletBalanceBefore);
         });
 
-        it('should increase the total amount of wei raised when receiving a transaction', async function() {
-          let weiBalanceBefore = await this.crowdsale.weiRaised.call();
-        });
-
         it('should increase total token supply', async function() {
           let totalSupplyBefore = await this.token.totalSupply.call();
 
